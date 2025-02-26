@@ -11,7 +11,7 @@ Include the name, logo and images refering to your project
 
 ## Introduction
 
-[Project XR ] is an educational XR experience that lets you explore in 3D [...] . Learn about [...].
+EchoView is an educational XR experience, designed for people with low-hearing capabilities, that visually guides users to an audio source, which is emitting sound nearby them. Minigame... 
 
 The problem detected was...
 
