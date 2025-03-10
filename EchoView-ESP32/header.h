@@ -4,7 +4,7 @@ const char* ssid = "dsv-extrality-lab";
 const char* password = "";
 
 WebSocketsServer webSocket = WebSocketsServer(81);
-String JSONtxt, oldJSON;
+String messageTXT, oldMsg;
 
 //=====================================================
 //function process event: new data received from client
@@ -55,7 +55,7 @@ void connect2Network()
 
 void sendMessage2Clients()
 {
-    if(oldJSON != JSONtxt)
-        webSocket.broadcastTXT(JSONtxt);
-    oldJSON = JSONtxt;
+    if(oldMsg != messageTXT)
+        webSocket.broadcastTXT(messageTXT);
+    oldMsg = messageTXT;
 }
