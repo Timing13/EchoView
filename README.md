@@ -7,11 +7,11 @@ _Some examples are shown below but you should expand on each subtitle as much as
 
 Include the name, logo and images refering to your project
 
-![{Your App XR} logo](./docs/example-image.jpg)
+![{Your App XR} logo](./EchoView_Logo.png)
 
 ## Introduction
 
-EchoView is an educational XR experience, designed for people with low-hearing capabilities, that visually guides users to an audio source, which is emitting sound nearby them. Minigame... 
+EchoView is an educational XR experience, designed for people with low-hearing capabilities, that visually guides users to an audio source, which is emitting sound nearby them. This experience also features a mini-game, which is be accessible to everyone. In particular, the mini-game challenges the user to find the audio source without the aid of visual feedback.
 
 The problem detected was...
 
