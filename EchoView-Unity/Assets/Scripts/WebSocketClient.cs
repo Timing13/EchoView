@@ -18,6 +18,8 @@ public class WebSocketClient : MonoBehaviour
 	private const float VERY_FAST_SPEED = BASE_SPEED - 0.5f;
     private const float VERY_SLOW_SPEED = BASE_SPEED + 0.5f;
 
+	private float oldAmplitude = 0f;
+
     [SerializeField]
 	private string IPAdress; //The IP Adress of the Server you want to connect to
 
@@ -28,8 +30,6 @@ public class WebSocketClient : MonoBehaviour
 
 	private bool _connected;
 
-	private bool _isDemoRunning;
-
 	void Start()
 	{
 		initWebSocket();
@@ -39,7 +39,6 @@ public class WebSocketClient : MonoBehaviour
         _rightScroller = _rightPlane.GetComponent<UVScroller_C>();
         leftLight.SetActive(false);
         rightLight.SetActive(false);
-        _isDemoRunning = false;
 		Debug.Log("Started");
 	}
 
@@ -89,9 +88,6 @@ public class WebSocketClient : MonoBehaviour
 		Debug.Log("[WebSocketClient] Received message from server: ");
 		Debug.Log("[WebSocketClient] " + socketMessage);
 
-		if (_isDemoRunning)
-			return;
-
 		try
 		{
 			string direction = socketMessage.Split('$')[0];
@@ -124,6 +120,8 @@ public class WebSocketClient : MonoBehaviour
 				_rightPlane.GetComponent<Renderer>().material.color = Color.red;
 			}
 
+			float hapticAmplitude = Convert.ToSingle(potentiometerValue) / 10;
+
 			//Handler of intensity feedback
 			if(potentiometerValue < 200){
 				_leftScroller.MainoffsetY = VERY_SLOW_SPEED;
@@ -142,12 +140,23 @@ public class WebSocketClient : MonoBehaviour
 				_rightScroller.MainoffsetY = VERY_FAST_SPEED;
 			}
 
+			if(hapticAmplitude != oldAmplitude){
+				oldAmplitude = hapticAmplitude;
+				OVRInput.SetControllerVibration(hapticAmplitude, hapticAmplitude, OVRInput.Controller.RTouch);
+				StartCoroutine(StopHapticFeedbackAfterDelay());
+			}
 		}
 		catch (Exception e)
 		{
 			Debug.Log("[WebSocketClient] " + e.Message);
 		}
 	}
+
+	private System.Collections.IEnumerator StopHapticFeedbackAfterDelay()
+    {
+        yield return new WaitForSeconds(1.0f);		//Haptic duration
+        OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch); // Disattiva la vibrazione
+    }
 
 	public async void SendWebSocketMessage(string text) //Sends Websocket Message to Server for the ESP32 to receive
 	{
@@ -158,10 +167,5 @@ public class WebSocketClient : MonoBehaviour
 			// Sending plain text socket
 			await _webSocket.SendText(text);
 		}
-	}
-
-	public void ToggleDemo()
-	{
-		_isDemoRunning = !_isDemoRunning;
 	}
 }
