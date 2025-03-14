@@ -5,7 +5,18 @@ using NativeWebSocket;
 
 public class WebSocketClient : MonoBehaviour
 {
-	public GameObject particleGameObject;
+	public GameObject leftLight;
+    public GameObject rightLight;
+    private GameObject _leftPlane;
+    private GameObject _rightPlane;
+    private UVScroller_C _leftScroller;
+    private UVScroller_C _rightScroller;
+    
+    private const float BASE_SPEED = -1f;
+    private const float FAST_SPEED = BASE_SPEED - 0.25f;
+    private const float SLOW_SPEED = BASE_SPEED + 0.25f;
+	private const float VERY_FAST_SPEED = BASE_SPEED - 0.5f;
+    private const float VERY_SLOW_SPEED = BASE_SPEED + 0.5f;
 
     [SerializeField]
 	private string IPAdress; //The IP Adress of the Server you want to connect to
@@ -17,12 +28,15 @@ public class WebSocketClient : MonoBehaviour
 
 	private bool _connected;
 
-	private ParticleSystem _particleSystem;
-
 	void Start()
 	{
 		initWebSocket();
-		_particleSystem = particleGameObject.GetComponent<ParticleSystem>();
+		_leftPlane = leftLight.transform.GetChild(0).gameObject;
+        _rightPlane = rightLight.transform.GetChild(0).gameObject;
+        _leftScroller = _leftPlane.GetComponent<UVScroller_C>();
+        _rightScroller = _rightPlane.GetComponent<UVScroller_C>();
+        leftLight.SetActive(false);
+        rightLight.SetActive(false);
 		Debug.Log("Started");
 	}
 
@@ -69,21 +83,63 @@ public class WebSocketClient : MonoBehaviour
 	private void WebSocket_OnMessage(byte[] data) //Receives webSocket message and handles it respectively depending on what it contains
 	{
 		string socketMessage = System.Text.Encoding.UTF8.GetString(data);
-		Debug.Log("Received message from server: ");
-		Debug.Log(socketMessage);
+		Debug.Log("[WebSocketClient] Received message from server: ");
+		Debug.Log("[WebSocketClient] " + socketMessage);
 
 		try
 		{
-			string splitMessage = socketMessage.Split(':')[1].Split("}")[0];
-			Debug.Log(splitMessage);
-			int potentiometerValue = Int32.Parse(splitMessage);
-			Debug.Log(potentiometerValue);
-			potentiometerValue -= 2500;
-			_particleSystem.Emit(potentiometerValue % 100);
+			string direction = socketMessage.Split('$')[0];
+			string intensity = socketMessage.Split('$')[1];
+			Debug.Log("[WebSocketClient] " + direction); Debug.Log("[WebSocketClient] " + intensity);
+			int potentiometerValue = Int32.Parse(intensity);
+			Debug.Log("[WebSocketClient] " + potentiometerValue);
+			
+			//Handler of direction feedback
+			if (direction == "NORTH"){
+				leftLight.SetActive(true);	
+				rightLight.SetActive(true);	
+				_leftPlane.GetComponent<Renderer>().material.color = Color.green;
+				_rightPlane.GetComponent<Renderer>().material.color = Color.green;
+			}
+			else if (direction == "EAST") {
+				leftLight.SetActive(false);	
+				rightLight.SetActive(true);	
+				_rightPlane.GetComponent<Renderer>().material.color = Color.yellow;
+			} else if (direction == "WEST")
+			{
+				leftLight.SetActive(true);	
+				rightLight.SetActive(false);	
+				_leftPlane.GetComponent<Renderer>().material.color = Color.yellow;
+			}
+			else if (direction == "SOUTH"){
+				leftLight.SetActive(true);	
+				rightLight.SetActive(true);	
+				_leftPlane.GetComponent<Renderer>().material.color = Color.red;
+				_rightPlane.GetComponent<Renderer>().material.color = Color.red;
+			}
+
+			//Handler of intensity feedback
+			if(potentiometerValue < 200){
+				_leftScroller.MainoffsetY = VERY_SLOW_SPEED;
+				_rightScroller.MainoffsetY = VERY_SLOW_SPEED;
+			} else if(potentiometerValue < 400){
+				_leftScroller.MainoffsetY = SLOW_SPEED;
+				_rightScroller.MainoffsetY = SLOW_SPEED;
+			} else if(potentiometerValue < 500){
+				_leftScroller.MainoffsetY = BASE_SPEED;
+				_rightScroller.MainoffsetY = BASE_SPEED;
+			} else if(potentiometerValue < 600){
+				_leftScroller.MainoffsetY = FAST_SPEED;
+				_rightScroller.MainoffsetY = FAST_SPEED;
+			} else if(potentiometerValue >= 600){
+				_leftScroller.MainoffsetY = VERY_FAST_SPEED;
+				_rightScroller.MainoffsetY = VERY_FAST_SPEED;
+			}
+
 		}
 		catch (Exception e)
 		{
-			Debug.Log(e.Message);
+			Debug.Log("[WebSocketClient] " + e.Message);
 		}
 	}
 
