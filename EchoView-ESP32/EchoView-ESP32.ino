@@ -2,7 +2,6 @@
 #include <sstream>
 #include "header.h"
 
-//#define MIC_PIN 2           // A1 is GPIO2
 #define MICROPHONES 4         // Number of microphones
 
 //Constants to define microphones direction
@@ -15,7 +14,7 @@
 int micPins[MICROPHONES];   // Array to match the microphones with their physical pin
 
 int currentClientNumber, micAvg = 0;
-int threshold = 200;
+int threshold = 300;
 int sourceDir = 4; // Default value
 int sourceAmp = -1; // Default value
 
@@ -83,6 +82,8 @@ void loop()
         
       }
     }
+
+    
     Serial.print("Source: ");
     Serial.println(directions[sourceDir]);
     Serial.print("Amplitude: ");
@@ -112,6 +113,6 @@ void loop()
 
     messageTXT = String(directions[sourceDir]);
     messageTXT.concat("$");
-    messageTXT.concat(String(sourceAvg));
+    messageTXT.concat(String(sourceAmp));
     webSocket.broadcastTXT(messageTXT);
 }
