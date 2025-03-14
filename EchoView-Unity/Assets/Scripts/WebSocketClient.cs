@@ -28,6 +28,8 @@ public class WebSocketClient : MonoBehaviour
 
 	private bool _connected;
 
+	private bool _isDemoRunning;
+
 	void Start()
 	{
 		initWebSocket();
@@ -37,6 +39,7 @@ public class WebSocketClient : MonoBehaviour
         _rightScroller = _rightPlane.GetComponent<UVScroller_C>();
         leftLight.SetActive(false);
         rightLight.SetActive(false);
+        _isDemoRunning = false;
 		Debug.Log("Started");
 	}
 
@@ -85,6 +88,9 @@ public class WebSocketClient : MonoBehaviour
 		string socketMessage = System.Text.Encoding.UTF8.GetString(data);
 		Debug.Log("[WebSocketClient] Received message from server: ");
 		Debug.Log("[WebSocketClient] " + socketMessage);
+
+		if (_isDemoRunning)
+			return;
 
 		try
 		{
@@ -152,5 +158,10 @@ public class WebSocketClient : MonoBehaviour
 			// Sending plain text socket
 			await _webSocket.SendText(text);
 		}
+	}
+
+	public void ToggleDemo()
+	{
+		_isDemoRunning = !_isDemoRunning;
 	}
 }

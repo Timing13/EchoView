@@ -122,6 +122,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &40919614 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3894324155612426650, guid: 709eb0c6ae4ce45609e4bda579886983, type: 3}
+  m_PrefabInstance: {fileID: 4526928730852809549}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &188133707 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1618701745696951961, guid: 709eb0c6ae4ce45609e4bda579886983, type: 3}
@@ -294,6 +299,11 @@ Transform:
   - {fileID: 313464019}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &223974226 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3894324155612426650, guid: 709eb0c6ae4ce45609e4bda579886983, type: 3}
+  m_PrefabInstance: {fileID: 1424946228}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &313464018
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,6 +949,7 @@ GameObject:
   - component: {fileID: 1454582954}
   - component: {fileID: 1454582953}
   - component: {fileID: 1454582952}
+  - component: {fileID: 1454582955}
   m_Layer: 0
   m_Name: UICanvas
   m_TagString: Untagged
@@ -1002,6 +1013,186 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1454582955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454582951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e03d7ac3ea584760828eb7d38f4f84c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftLight: {fileID: 223974226}
+  rightLight: {fileID: 40919614}
+--- !u!1 &1515401011
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1515401014}
+  - component: {fileID: 1515401013}
+  - component: {fileID: 1515401012}
+  m_Layer: 0
+  m_Name: '[BuildingBlock] Controller Buttons Mapper'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1515401012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515401011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d376240d064f4484e81824d51391caf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buttonClickActions:
+  - Title: 
+    Button: 256
+    ButtonMode: 2
+    Callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1454582955}
+          m_TargetAssemblyTypeName: DemoScript, Assembly-CSharp
+          m_MethodName: ToggleDemo
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1828545798}
+          m_TargetAssemblyTypeName: WebSocketClient, Assembly-CSharp
+          m_MethodName: ToggleDemo
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Title: 
+    Button: 4
+    ButtonMode: 1
+    Callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1454582955}
+          m_TargetAssemblyTypeName: DemoScript, Assembly-CSharp
+          m_MethodName: SetDirectionDown
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - Title: 
+    Button: 4
+    ButtonMode: 0
+    Callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1454582955}
+          m_TargetAssemblyTypeName: DemoScript, Assembly-CSharp
+          m_MethodName: SetDirectionDown
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Title: 
+    Button: 8
+    ButtonMode: 1
+    Callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1454582955}
+          m_TargetAssemblyTypeName: DemoScript, Assembly-CSharp
+          m_MethodName: SetDirectionUp
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - Title: 
+    Button: 8
+    ButtonMode: 0
+    Callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1454582955}
+          m_TargetAssemblyTypeName: DemoScript, Assembly-CSharp
+          m_MethodName: SetDirectionUp
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1515401013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515401011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b023183069df224080314a560e6e1ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockId: 80aa2eb2-af2f-40a9-ad9e-18044ce65bee
+  instanceId: ce61206d-0ebb-4da3-aac6-b10b9039d4de
+  version: 1
+  installationRoutineCheckpoint:
+    _installationRoutineId: 
+    _installationVariants: []
+--- !u!4 &1515401014
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515401011}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1594678261
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,8 +1286,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5822a10a8f194e7a8bd1525e3bf729c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleGameObject: {fileID: 0}
-  IPAdress: 10.204.0.167
+  leftLight: {fileID: 223974226}
+  rightLight: {fileID: 40919614}
+  IPAdress: 10.204.0.165
   Port: 81
 --- !u!114 &1828545799
 MonoBehaviour:
@@ -1463,3 +1655,4 @@ SceneRoots:
   - {fileID: 1828545800}
   - {fileID: 460493544}
   - {fileID: 1454582954}
+  - {fileID: 1515401014}
