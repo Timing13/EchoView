@@ -2,20 +2,15 @@
 At the same level than the folders Assets/* -->
 
 # EchoView
-
-_Some examples are shown below but you should expand on each subtitle as much as needed to provide comprehensive information/ **MarkDown** reference is available here: <https://www.markdownguide.org/basic-syntax/>_
-
-Include the name, logo and images refering to your project
-
 ![{Your App XR} logo](./EchoView_Logo.png)
 
 ## Introduction
 
 EchoView is an educational XR experience, designed for people with low-hearing capabilities, that visually guides users to an audio source, which is emitting sound nearby them. This experience also features a mini-game, which is be accessible to everyone. In particular, the mini-game challenges the user to find the audio source without the aid of visual feedback.
 
-The problem detected was...
+The problem detected was centered on the challenges that people with hearing impairments face in responding to sound interactions. In everyday life, people are often immersed in environments that have multiple sound interactions. For instance, a person in a room could be able to hear other people trying to speak to him, objects falling, a door opening, etc. These actions seem normal to most of us. However, those may be very hard tasks for people that do not have full hearing capabilities.  
 
-The proposed solution is valuable because...
+The proposed solution is valuable because it is a simple tool that can help people to try to overcome this problem. EchoView is capable to detect audio feedback from all the directions near the user, and give a visual feedback for him. Moreover, the minigame implemented in the experience is also valuable, as it acts as an educational experience for people which do not have hearing impairments. In fact, the minigame requires all people to wear noise-cancelling headphones, and its goal is to try to make the user guess where the audio stimuli is coming from, without the aid of EchoView's visual feedback.   
 
 ## Design Process
 
