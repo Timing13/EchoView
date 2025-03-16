@@ -1,6 +1,3 @@
-<!-- Place this file at the root of your Unity project.
-At the same level than the folders Assets/* -->
-
 # EchoView
 ![{Your App XR} logo](./EchoView_Logo.png)
 
@@ -41,21 +38,51 @@ Watch the demo video or try the live version.
 
 Link: <https://extralitylab.dsv.su.se/>
 
-## Installation
+## Building & Installation
 
-[_Installation process to build and run your project. Use code blocks, tables, or lists to show the commands, steps, or requirements the chosen platform. Mention any dependencies or libraries that your project uses and how to install them._]
+### Building the ESP32 project
 
-To install and run [Your app] on your platform or device, follow the instructions below:
+#### Prerequisites
 
-| Platform | Device | Requirements | Commands |
-| -------- | ------ | ------------ | -------- |
-| Windows  | Meta Quest   | Unity 2022.3 or higher, Arduino | `git clone https://github.com/user/repo.git`<br>`cd project-xr`<br>`open MainScene.unity`<br>`Build and Run` |
-| Android  | Phone  | Android 19 or higher, ARCore 1.18 or higher | `git clone https://github.com/user/repo.git`<br>`cd solar-system-xr`<br>`open SolarSystemXR.unity`<br>`switch platform to Android`<br>`build and run` |
+- The [Arduino IDE](https://www.arduino.cc/en/software) (v2.3.4)
+- The [ESP32 package](https://github.com/espressif/arduino-esp32) (v3.1.1)
+- The [WebSockets](https://www.arduinolibraries.info/libraries/web-sockets) library (v2.6.1)
+- The [WiFiWebServer](https://docs.arduino.cc/libraries/wifiwebserver/) library (v1.10.1)
 
-You also need to install the following dependencies or libraries for your project:
+#### Deploying to an ESP32 Board
 
-- Library A - a Unity plugin for building VR and AR experiences
-- Library B - a C# wrapper for speech recognition and synthesis
+1. Open the project file `EchoView-ESP32.ino`;
+2. Open the `header.h` file and initialize the variables `ssid` and `password` (lines 3 and 4) with your network name and password;
+3. Compile the project by clicking the `Verify` button;
+4. Connect the board to the computer and select the correct port;
+5. Send the project to the board using the `Upload` button;
+6. Open the serial monitor and set the baud rate to `115200 baud`;
+7. Copy the IP address that will be printed once the connection is established.
+
+### Building the Unity project
+
+#### Prerequisites
+
+- [Unity](https://unity.com/releases/editor/archive) (v2022.3.56f1) with the Android Build Support
+- The following Meta packages (v72.0.0):
+  - [Meta XR Core SDK](https://assetstore.unity.com/packages/tools/integration/meta-xr-core-sdk-269169)
+  - [Meta MR Utility Kit](https://assetstore.unity.com/packages/tools/integration/meta-mr-utility-kit-272450)
+  - [Meta XR Haptics SDK](https://assetstore.unity.com/packages/tools/integration/meta-xr-haptics-sdk-272446)
+  - [Meta XR Interaction ​SDK](https://assetstore.unity.com/packages/tools/integration/meta-xr-interaction-sdk-265014)
+  - [Meta XR Interaction SDK Essentials](https://assetstore.unity.com/packages/tools/integration/meta-xr-interaction-sdk-essentials-264559)
+  - [Meta XR Platform SDK](https://assetstore.unity.com/packages/tools/integration/meta-xr-platform-sdk-262366)
+  - [Meta XR Simulator](https://assetstore.unity.com/packages/tools/integration/meta-xr-simulator-266732)
+  - **Note**: Installing the `Meta XR All-in-One SDK` package may cause conflicts with `NativeWebSocket`.
+- The [NativeWebSocket](https://github.com/endel/NativeWebSocket) package (v1.1.5)
+
+#### Deploying to a Meta Quest Headset
+
+1. Open the project `EchoView-Unity`;
+2. Go to `File` -> `Build settings`, select `Android` and then press the `Switch platform` button;
+4. Inside the Unity editor, double-click on the `Scenes` folder and open the `MainScene`;
+5. Select the `WebSocketClientManager` object in the scene hierarchy and paste the ESP-32 IP address in the appropriate field in the inspector panel;
+6. Click the `Build` or the `Build and Run` buttons and choose where to save the build files (e.g. create a folder named `Build` in the project directory), write the build name and press the `Save` button;
+7. If you have pressed the `Build` button, install the APK on your headset (e.g. running `adb install PATH_TO_THE_APK`).
 
 ## Usage
 
@@ -79,8 +106,13 @@ Some tips, tricks, and best practices for using [Your App XR} effectively:
 
 ## References
 
-Acknowledge here the sources, references, or inspirations that you used for your project. Give credit to the original authors or creators of the materials that you used or adapted for your project (3D models, source code, audio effects, etc.)
+### Unity Assets
+
+- [Particle Light](https://assetstore.unity.com/packages/vfx/shaders/particle-light-10105)
 
 ## Contributors
 
-The authors of the project, contact information, and links to their websites or portfolios.
+- Timon Léon Stojkovic
+- Lorenzo Vercilli
+- Davide Costantini ([LinkedIn](https://www.linkedin.com/in/davide-costantini/))
+- Guilherme Lacerda Paes Dos Santos
