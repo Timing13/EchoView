@@ -17,14 +17,14 @@ The hardware was designed in two separate parts, which were merged in the end to
     <img src="./Images/Electronics_Prototype.png" alt="Image 2" width="45%">
 </p>
 As soon as one microphone output was obtained and could reliably detect audio peaks produced with a knife and glass, a custom board was made to accomodate all 4 microphones.
-
-![PCB](./Images/PCB.jpeg)
 The microphones were then mounted on the prototype cardboard belt, and peaks were recorded for each microphones, which producted the following pattern.
-
-![Mic Test](./Images/Mic_Test.jpeg)
+<p align="center">
+    <img src="./Images/PCB.jpeg" alt="Image 1" width="45%">
+    <img src="./Images/Mic_Test.jpeg" alt="Image 2" width="45%">
+</p>
 This was deemed feasible, and the final prototype was produced, consisting of a real belt, and all the components securely mounted with cable ties.
 
-![Belt](./Images/Belt.jpg)
+<img src="Images/Belt.jpg" alt="PCB" width="300">
 [_Add evidence on the general overview of how you planned, designed, and developed your project, including the goals, challenges, and solutions._]
 
 For example:
