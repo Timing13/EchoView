@@ -1,5 +1,5 @@
 # EchoView
-![{Your App XR} logo](./EchoView_Logo.png)
+![{Your App XR} logo](./Images/EchoView_Logo.png)
 
 ## Introduction
 
@@ -11,6 +11,11 @@ The proposed solution is valuable because it is a simple tool that can help peop
 
 ## Design Process
 
+The hardware was designed in two separate parts, which were merged in the end to create the finished product. These are the wearable prototype, which was made out of cardboard and had the microphone mounted with cable ties, as well as a breadboard which was made to prototype the electronics.
+<p align="center">
+    <img src="./Images/Cardboard_Prototype.jpg" alt="Image 1" width="45%">
+    <img src="./Images/Electronics_Prototype.jpg" alt="Image 2" width="45%">
+</p>
 [_Add evidence on the general overview of how you planned, designed, and developed your project, including the goals, challenges, and solutions._]
 
 For example:
