@@ -24,7 +24,9 @@ The microphones were then mounted on the prototype cardboard belt, and peaks wer
 </p>
 This was deemed feasible, and the final prototype was produced, consisting of a real belt, and all the components securely mounted with cable ties.
 
-<img src="Images/Belt.jpg" alt="PCB" width="300">
+<p align="center">
+  <img src="Images/PCB.jpeg" alt="PCB" width="300">
+</p>
 [_Add evidence on the general overview of how you planned, designed, and developed your project, including the goals, challenges, and solutions._]
 
 For example:
