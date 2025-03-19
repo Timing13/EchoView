@@ -32,6 +32,9 @@ public class WebSocketClient : MonoBehaviour
 
 	private bool _isDemoRunning;
 
+	private bool _gameMode;
+	private bool _gameModeGuessing;
+
 	void Start()
 	{
 		initWebSocket();
@@ -42,6 +45,8 @@ public class WebSocketClient : MonoBehaviour
         leftLight.SetActive(false);
         rightLight.SetActive(false);
         _isDemoRunning = false;
+        _gameMode = false;
+        _gameModeGuessing = false;
 		Debug.Log("Started");
 	}
 
@@ -92,6 +97,9 @@ public class WebSocketClient : MonoBehaviour
 		Debug.Log("[WebSocketClient] " + socketMessage);
 
 		if (_isDemoRunning)
+			return;
+
+		if (_gameMode && !_gameModeGuessing)
 			return;
 
 		try
@@ -178,5 +186,20 @@ public class WebSocketClient : MonoBehaviour
 	public void ToggleDemo()
 	{
 		_isDemoRunning = !_isDemoRunning;
+	}
+
+	public void StartGameMode()
+	{
+		_gameMode = true;
+	}
+
+	public void SetGameModeGuessing(bool status)
+	{
+		_gameModeGuessing = status;
+		if (!status)
+		{
+			leftLight.SetActive(false);
+			rightLight.SetActive(false);
+		}
 	}
 }

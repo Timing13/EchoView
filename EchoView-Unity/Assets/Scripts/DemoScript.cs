@@ -16,7 +16,9 @@ public class DemoScript : MonoBehaviour
     private bool _demoStarted;
     private bool _directionUp;
     private bool _directionDown;
-
+    private bool _gameMode;
+    private bool _gameModeGuessing;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,9 @@ public class DemoScript : MonoBehaviour
     void Update()
     {
         if (!_demoStarted)
+            return;
+
+        if (_gameMode && !_gameModeGuessing)
             return;
 
         var result = OVRInput.Get(OVRInput.RawAxis2D.LThumbstick);
@@ -108,5 +113,20 @@ public class DemoScript : MonoBehaviour
     public void SetDirectionDown(bool active)
     {
         _directionDown = active;
+    }
+    
+    public void StartGameMode()
+    {
+        _gameMode = true;
+    }
+
+    public void SetGameModeGuessing(bool status)
+    {
+        _gameModeGuessing = status;
+        if (!status)
+        {
+            leftLight.SetActive(false);
+            rightLight.SetActive(false);
+        }
     }
 }

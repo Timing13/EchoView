@@ -13473,6 +13473,7 @@ GameObject:
   - component: {fileID: 1454582953}
   - component: {fileID: 1454582952}
   - component: {fileID: 1454582955}
+  - component: {fileID: 1454582956}
   m_Layer: 0
   m_Name: UICanvas
   m_TagString: Untagged
@@ -13550,6 +13551,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftLight: {fileID: 223974226}
   rightLight: {fileID: 40919614}
+--- !u!114 &1454582956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454582951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01624d2654a7c4cc8a498d9ca54279e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  webSocketClientManager: {fileID: 1828545797}
+  demoScriptObject: {fileID: 1454582951}
 --- !u!1 &1459413043
 GameObject:
   m_ObjectHideFlags: 0
@@ -20106,12 +20121,32 @@ PrefabInstance:
     m_TransformParent: {fileID: 2120656664}
     m_Modifications:
     - target: {fileID: 5423061889181484190, guid: db555436dac8548fe961078a9194c920, type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5423061889181484190, guid: db555436dac8548fe961078a9194c920, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5423061889181484190, guid: db555436dac8548fe961078a9194c920, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1454582956}
     - target: {fileID: 5423061889181484190, guid: db555436dac8548fe961078a9194c920, type: 3}
       propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1828545797}
+    - target: {fileID: 5423061889181484190, guid: db555436dac8548fe961078a9194c920, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5423061889181484190, guid: db555436dac8548fe961078a9194c920, type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5423061889181484190, guid: db555436dac8548fe961078a9194c920, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5450466541371872862, guid: db555436dac8548fe961078a9194c920, type: 3}
       propertyPath: m_Name
