@@ -104,23 +104,37 @@ Link: <https://extralitylab.dsv.su.se/>
 
 ## Usage
 
-[_Usage section showing how to use your project and interact with its features. You can use examples, screenshots, gifs, or videos to demonstrate the user interface, controls, and feedback of your project. You can also provide tips, tricks, or best practices for using your project effectively._]
+### Main Menu
 
-To use [Your App XR} and interact with its features, follow the guidelines below:
+Upon launching the application, the user is greeted with the main menu, which features two buttons:
 
-- To move around, use the touchpad or the joystick on your controller, or swipe on your phone screen.
-- To select ...a planet or a moon, point at it with your controller or your phone, or gaze at it with your headset.
-- To zoom in or out, use the trigger or the button on your controller, or pinch on your phone screen.
-- To access the information panel, press...
-- To use voice commands, say "OK" followed by one of the following phrases:
-  - "Show me [X]" - to show X element
-  - "Close window Y" - to close window Y
-  
-Some tips, tricks, and best practices for using [Your App XR} effectively:
+- `Main Scene`: Enters the main experience.  
+- `Game Scene`: Loads a gameplay environment.  
 
-- Tip 1
-- Tip 2
+<!-- TODO: screenshot -->
 
+### Main Scene
+
+The **Main Scene** provides the core experience, allowing users to visualize audio detected by the microphones on the belt. The visualization adapts based on two key factors:
+
+- **Direction**:
+  - If the sound originates from the left or right, the corresponding side will illuminate.
+  - If the sound is detected in front or behind the user, both sides will light up.
+  - Front and rear sounds are distinguished by different colors.
+- **Distance**:
+  - Nearby sounds appear **green**.
+  - Mid-range sounds appear **yellow**.
+  - Distant sounds appear **red**.
+  - If the noise is detected in front of the user, it always appears **green**.
+  - The speed of the animation also changes based on distance.
+
+![Main Scene](images/MainScene.png)
+
+### Game Scene
+
+The **Game Scene** is designed for demo sessions, where the team members generates sounds from different directions, and the player must determine the source of the noise. Unlike the **Main Scene**, no visual feedback is provided in real time. Instead, the player must listen carefully and make a guess by pressing the **Guess** button. Once the button is pressed, visual feedback will be displayed for a few seconds to indicate whether their guess was correct.
+
+![Game Scene](images/GameScene.png)
 
 ## References
 
