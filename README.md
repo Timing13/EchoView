@@ -41,20 +41,10 @@ For example:
 
 ## System description
 
-### Features
-
-[_Features and functionalities of your project. You can use bullet points, screenshots, gifs, or videos to illustrate your points. Also include a link to a demo or a live version of your project._]
-
-For example:
-
-- Immersive and realistic 3D models of [...]
-- Interactive and intuitive controls using hand gestures and voice commands
-- Customizable settings and preferences for the user experience
-- Compatible with various XR platforms and devices
-
-Watch the demo video or try the live version.
-
-Link: <https://extralitylab.dsv.su.se/>
+- **Real-time Audio Visualization**: The application provides intuitive visual feedback to represent audio detected by an array of microphones in real time.  
+- **Intuitive Visual Feedback**: Two animated visuals appear on the left and right sides of the user's field of view. Their colors and animations change based on the position and distance of the detected sound source, making the feedback immediately understandable.  
+- **Interactive Minigame**: Includes a button that users can press using ray interaction with the right controller to guess the real-world position of the detected sound.  
+- **Meta Quest Compatibility**: Fully compatible with all Meta Quest headsets starting from the Quest 2.  
 
 ## Building & Installation
 
@@ -128,13 +118,13 @@ The **Main Scene** provides the core experience, allowing users to visualize aud
   - If the noise is detected in front of the user, it always appears **green**.
   - The speed of the animation also changes based on distance.
 
-![Main Scene](images/MainScene.png)
+![Main Scene](Images/MainScene.png)
 
 ### Game Scene
 
 The **Game Scene** is designed for demo sessions, where the team members generates sounds from different directions, and the player must determine the source of the noise. Unlike the **Main Scene**, no visual feedback is provided in real time. Instead, the player must listen carefully and make a guess by pressing the **Guess** button. Once the button is pressed, visual feedback will be displayed for a few seconds to indicate whether their guess was correct.
 
-![Game Scene](images/GameScene.png)
+![Game Scene](Images/GameScene.png)
 
 ## References
 
