@@ -1,6 +1,8 @@
 # EchoView
 ![{Your App XR} logo](./Images/EchoView_Logo.png)
 
+## [Video Showcase](https://www.youtube.com/watch?v=Ohmy7S9Kt3s)
+
 ## Introduction
 
 EchoView is an educational XR experience, designed for people with low-hearing capabilities, that visually guides users to an audio source, which is emitting sound nearby them. This experience also features a mini-game, which is be accessible to everyone. In particular, the mini-game challenges the user to find the audio source without the aid of visual feedback.
