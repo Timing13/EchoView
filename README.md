@@ -52,10 +52,11 @@ There are mainly two kinds of people that EchoView is targeting: Deaf, Defeaned 
 
 We made several design decisions based on the unique needs and challenges that these groups had. These include:
 
--For **Deaf, Defeaned or Hard-Of-Hearing People**, we recognised that the main use of EchoView would be to help aid them in situations that require them to know quickly where and if a sound was made. As such, one of our design decisions was to develop the application in XR, utilising Meta's built-in Passthrough Vision support, instead of in simple virtual reality. We also developed the software in a way that is fully accessible to them, without ever relying on sound to convey information either in the menus or in the game proper.
+- For **Deaf, Defeaned or Hard-Of-Hearing People**, we recognised that the main use of EchoView would be to help aid them in situations that require them to know quickly where and if a sound was made. As such, one of our design decisions was to develop the application in XR, utilising Meta's built-in Passthrough Vision support, instead of in simple virtual reality. We also developed the software in a way that is fully accessible to them, without ever relying on sound to convey information either in the menus or in the game proper.
 
--For **People without Disabilities**, our main design focus was making sure that the experience created a sense of empathy in them towards people that do face disability. To facilitate that, we developed an additional game mode (utilising the same core mechanics) that is meant to give these users a simple task to do whilst having to rely only on the sound signals coming from EchoView (by blocking outside sound through noice cancelling headphones). 
-An additional minor design consideration was to be careful across the experience and the documentation with the language used to describe peoples that have some sort hearing impairment. To do so, references such as https://disability.stanford.edu/sites/g/files/sbiybj26391/files/media/file/disability-language-guide-stanford_1.pdf were utilised. 
+- For **People without Disabilities**, our main design focus was making sure that the experience created a sense of empathy in them towards people that do face disability. To facilitate that, we developed an additional game mode (utilising the same core mechanics) that is meant to give these users a simple task to do whilst having to rely only on the sound signals coming from EchoView (by blocking outside sound through noice cancelling headphones).
+
+An additional minor design consideration was to be careful across the experience and the documentation with the language used to describe peoples that have some sort hearing impairment. To do so, references such as the [Stanford Disability Language Guide](https://disability.stanford.edu/sites/g/files/sbiybj26391/files/media/file/disability-language-guide-stanford_1.pdf) were utilised. 
 
 
 ## System description
@@ -115,7 +116,7 @@ An additional minor design consideration was to be careful across the experience
 
 ### Microphone Belt
 
-Connect the powerbank and the ESP32 via a USB C cable. The ESP32 should automatically start sending data to the WebSocket.
+Connect the powerbank and the ESP32 via a USB-C cable. The ESP32 should automatically start sending data to the WebSocket.
 
 ### Main Menu
 
