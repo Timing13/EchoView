@@ -44,9 +44,13 @@ For the Game Scene, our initial plan was to allow the button to be pressed using
 
 ![Game Scene Sketch](Images/GameSceneSketch.jpg)
 
-For example:
-- User Persona: A description of your target user, their needs, motivations, and pain points, and how your project addresses them.
-- User Journey: A visualization of how your user interacts with your project, from the initial trigger to the final outcome, and what emotions they experience along the way.
+## Intended Users
+
+There are mainly two kinds of people that EchoView is targeting: Deaf, Defeaned or Hard-Of-Hearing People, for whom the application has the potential to help aide them in tasks where knowing the source of a sound is of importance; as well as people without disabilities that wish to gain a higher sense of empathy towards those with them.
+
+We made several design decisions based on the unique needs and challenges that these groups had. These include:
+
+-For **Deaf, Defeaned or Hard-Of-Hearing People**, we recognised that the main use of EchoView would be to help aid them in situations that require them to know quickly where and if a sound was made. As such, one of our design decisions was to develop the application in XR, utilising Meta's built-in Passthrough Vision support, instead of in simple virtual reality. 
 
 
 ## System description
