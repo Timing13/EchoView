@@ -11,7 +11,11 @@ The proposed solution is valuable because it is a simple tool that can help peop
 
 ## Design Process
 
-Since the project was developed in a short time frame, the research was only based on reviewing existing literature to find out if a project like this is feasible. In a paper focused on Head-Mounted Display Visualizations to Support Sound Awareness for the Deaf and Hard of Hearing](https://dl.acm.org/doi/10.1145/2702123.2702393), the results indicated that that XR visualizations help people with hearing impairments by making it easier to identify speakers and sounds, though preferences and social settings affect their usefulness. As the paper further suggests that future work in this field is neccessary and required, we were convinced to pursue this project further.
+### Initial research
+
+Since the project was developed in a short time frame, the research was only based on reviewing existing literature to find out if a project like this is feasible. In a paper focused on [Head-Mounted Display Visualizations to Support Sound Awareness for the Deaf and Hard of Hearing](https://dl.acm.org/doi/10.1145/2702123.2702393), the results indicated that that XR visualizations help people with hearing impairments by making it easier to identify speakers and sounds, though preferences and social settings affect their usefulness. As the paper further suggests that future work in this field is neccessary and required, we were convinced to pursue this project further.
+
+### Hardware design
 
 The hardware was designed in two separate parts, which were merged in the end to create the finished product. These are the wearable prototype, which was made out of cardboard and had the microphone mounted with cable ties, as well as a breadboard which was made to prototype the electronics.
 <p align="center">
@@ -29,14 +33,20 @@ This was deemed feasible, and the final prototype was produced, consisting of a 
 <p align="center">
   <img src="Images/Belt.jpg" alt="Belt" width="600">
 </p>
-[_Add evidence on the general overview of how you planned, designed, and developed your project, including the goals, challenges, and solutions._]
+
+### Unity scene design  
+
+The design of the Unity scenes began with initial sketches. Originally, our concept for the Main Scene featured a single visual feedback element at the bottom of the scene. However, we later opted for two separate feedback elements—one on the left and one on the right—for better spatial awareness.
+
+![Main Scene Sketch](Images/MainSceneSketch.jpg)
+
+For the Game Scene, our initial plan was to allow the button to be pressed using hand tracking. However, we ultimately chose to use a controller instead, as it also provides haptic feedback.
+
+![Game Scene Sketch](Images/GameSceneSketch.jpg)
 
 For example:
-- Brainstorming: A screenshot of the whiteboard or post-it notes used to land the project's idea.
-- User Research: Pictures and summary of how you conducted user research, such as surveys, interviews, or observations, and what insights you gained from it.
 - User Persona: A description of your target user, their needs, motivations, and pain points, and how your project addresses them.
 - User Journey: A visualization of how your user interacts with your project, from the initial trigger to the final outcome, and what emotions they experience along the way.
-- Wireframes and Prototypes: A collection of sketches, mockups, or prototypes that show the layout, structure, and functionality of your project, and how you tested and iterated on them.
 
 
 ## System description
@@ -96,12 +106,11 @@ For example:
 
 ### Main Menu
 
-Upon launching the application, the user is greeted with the main menu, which features two buttons:
+When the application starts, the user is welcomed by the main menu, displaying the experience logo and a prompt to wait for the experience to begin. During the demonstration, team members will manage the progression of the experience.  
 
-- `Main Scene`: Enters the main experience.  
-- `Game Scene`: Loads a gameplay environment.  
+The user can advance to the next scene by pressing the trigger on the left controller.  
 
-<!-- TODO: screenshot -->
+![Main Scene](Images/MainMenu.png)
 
 ### Main Scene
 
@@ -117,6 +126,8 @@ The **Main Scene** provides the core experience, allowing users to visualize aud
   - Distant sounds appear **red**.
   - If the noise is detected in front of the user, it always appears **green**.
   - The speed of the animation also changes based on distance.
+
+The user can advance to the next scene by pressing the hand trigger on the left controller.  
 
 ![Main Scene](Images/MainScene.png)
 
