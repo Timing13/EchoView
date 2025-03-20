@@ -32,7 +32,7 @@ public class WebSocketClient : MonoBehaviour
 
 	private bool _isDemoRunning;
 
-	private bool _gameMode;
+	private bool _gameMode = false;
 	private bool _gameModeGuessing;
 
 	void Start()
@@ -45,7 +45,6 @@ public class WebSocketClient : MonoBehaviour
         leftLight.SetActive(false);
         rightLight.SetActive(false);
         _isDemoRunning = false;
-        _gameMode = false;
         _gameModeGuessing = false;
 		Debug.Log("Started");
 	}

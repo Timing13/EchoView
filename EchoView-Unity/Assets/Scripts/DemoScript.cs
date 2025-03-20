@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DemoScript : MonoBehaviour
 {
@@ -128,5 +129,10 @@ public class DemoScript : MonoBehaviour
             leftLight.SetActive(false);
             rightLight.SetActive(false);
         }
+    }
+
+    public void ChangeScene()
+    {
+        SceneManager.LoadScene("GameScene");
     }
 }

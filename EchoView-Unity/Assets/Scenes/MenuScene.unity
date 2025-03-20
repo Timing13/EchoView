@@ -526,7 +526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc5c234723e3a54d8dd09b131117743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _meshType: 5
+  _meshType: 1
 --- !u!114 &28440441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -557,7 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2609c54f376cffc4da1ab9401cc1a36f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skeletonType: 5
+  _skeletonType: 1
   _updateRootPose: 0
   _updateRootScale: 1
   _enablePhysicsCapsules: 0
@@ -8050,6 +8050,7 @@ GameObject:
   m_Component:
   - component: {fileID: 817822869}
   - component: {fileID: 817822870}
+  - component: {fileID: 817822871}
   m_Layer: 0
   m_Name: MenuManager
   m_TagString: Untagged
@@ -8082,6 +8083,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c78eacd1179688b4fb94f3aa7f5b70ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &817822871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817822867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68b91dffe1a2c9243b9f4206be572ed1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &825923666
@@ -10203,7 +10216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc5c234723e3a54d8dd09b131117743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _meshType: 4
+  _meshType: 0
 --- !u!114 &1054937621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10234,7 +10247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2609c54f376cffc4da1ab9401cc1a36f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skeletonType: 4
+  _skeletonType: 0
   _updateRootPose: 0
   _updateRootScale: 1
   _enablePhysicsCapsules: 0
@@ -17934,7 +17947,7 @@ MonoBehaviour:
     Callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 817822870}
+        - m_Target: {fileID: 817822871}
           m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
           m_MethodName: LoadExperience
           m_Mode: 1
