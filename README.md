@@ -135,6 +135,6 @@ The **Game Scene** is designed for demo sessions, where the team members generat
 ## Contributors
 
 - Timon Léon Stojkovic
-- Lorenzo Vercilli
+- Lorenzo Vercilli ([LinkedIn](www.linkedin.com/in/lorenzo-vercilli-71218628a))
 - Davide Costantini ([LinkedIn](https://www.linkedin.com/in/davide-costantini/))
 - Guilherme Lacerda Paes Dos Santos
