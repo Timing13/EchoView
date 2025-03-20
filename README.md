@@ -132,6 +132,21 @@ The **Game Scene** is designed for demo sessions, where the team members generat
 
 - [Particle Light](https://assetstore.unity.com/packages/vfx/shaders/particle-light-10105)
 
+### Hardware
+
+- [ESP32](https://www.sparkfun.com/sparkfun-thing-plus-esp32-s2-wroom.html)
+
+- [Microphones](https://www.az-delivery.de/en/products/gy-max4466-mikrofonw)
+
+- [Meta Quest 2](https://www.meta.com/se/en/quest/products/quest-2/)
+
+### Software
+
+- [Unity](https://unity.com/)
+
+- [Arduino IDE](https://www.arduino.cc/en/software)
+
+
 ## Contributors
 
 - Timon Léon Stojkovic
