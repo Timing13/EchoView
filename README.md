@@ -113,6 +113,10 @@ An additional minor design consideration was to be careful across the experience
 
 ## Usage
 
+### Microphone Belt
+
+Connect the powerbank and the ESP32 via a USB C cable. The ESP32 should automatically start sending data to the WebSocket.
+
 ### Main Menu
 
 When the application starts, the user is welcomed by the main menu, displaying the experience logo and a prompt to wait for the experience to begin. During the demonstration, team members will manage the progression of the experience.  
